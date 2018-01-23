@@ -8,3 +8,7 @@
 * Added a class `Blockchain` which represents a chain of blocks
 * Blockchains can be used as a payment system, so I added a basic
 * transaction system
+
+## v3
+* Fleshed out the transaction system
+* Added a new class `Address` which represents an address
