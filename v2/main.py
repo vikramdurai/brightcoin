@@ -20,6 +20,8 @@ class Block:
         # unique artifacts
         self.nonce = 0
         self.timestamp = 0
+        # transactions list
+        self.tx = []
     # the proof-of-work method
     @property
     def hash(self):
@@ -47,11 +49,45 @@ class Block:
             timestamp = time()
             ##debug
             print("%s" % h.hexdigest(), end="\r")
-        # the hash is finally a valid proof!
+        # the hash is finally a valid proof
         # so update the cache
-        self._cachedHash = ""
+        self._cachedHash = h.hexdigest()
         # also update the artifacts
         self.nonce = nonce
         self.timestamp = timestamp
         # return the hash
         return h.hexdigest()
+
+# create the Genesis Block and hash it
+# the genesis block is the only block in the
+# system to have no block before it
+genesisBlock = Block(None, "Genesis Block!")
+if genesisBlock.hash: pass
+
+class Blockchain:
+    def __init__(self):
+        self.chain = []
+        self.pending = []
+        self.chain.append(genesisBlock)
+    # create a new transaction
+    # by adding it to the waiting list of
+    # transactions to be verified
+    def tx(self, sender, receiver, amount):
+        self.pending.append({
+            "sender": sender,
+            "receiver": receiver,
+            "amount": amount
+        })
+
+    # mining generates new blocks
+    # and validates transactions
+    def mine(self, msg=""):
+        # create a block and hash it
+        b = Block(self.chain[len(self.chain)-1].hash, msg)
+        if b.hash: pass
+        # empty the transaction list
+        # into the freshly created block
+        b.tx = self.pending
+        self.pending = []
+        # add it to the chain
+        self.chain.append(b)
