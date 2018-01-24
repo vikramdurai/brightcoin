@@ -22,3 +22,6 @@
 ## v5
 * Moved the blockchain to the database
 * Moved the transaction history to the database
+
+## v6
+* Added a simple API
