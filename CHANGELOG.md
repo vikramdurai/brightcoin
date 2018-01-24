@@ -18,3 +18,7 @@
 * Moved the addresses list to an SQLite3 database
 * Moved the `mine` method from the `Blockchain` class to the `Address` class
 * Miners now get rewards for mining
+
+## v5
+* Moved the blockchain to the database
+* Moved the transaction history to the database
