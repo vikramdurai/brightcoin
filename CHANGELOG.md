@@ -12,3 +12,9 @@
 ## v3
 * Fleshed out the transaction system
 * Added a new class `Address` which represents an address
+* Added a list named `addresses` which is a kind of simple database
+
+## v4
+* Moved the addresses list to an SQLite3 database
+* Moved the `mine` method from the `Blockchain` class to the `Address` class
+* Miners now get rewards for mining
