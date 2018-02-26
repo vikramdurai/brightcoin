@@ -1,11 +1,11 @@
-FROM ubuntu:latest
-RUN apt-get update \
-  && apt-get install -y python3-pip python3-dev \
-  && cd /usr/local/bin \
-  && ln -s /usr/bin/python3 python \
-  && pip3 install --upgrade pip
+# grab the latest version of Python
+FROM python:latest
+# create a temporary folder to hold installation
 COPY . /app
 WORKDIR /app
-RUN pip3 install -r ./require.txt
-ENTRYPOINT [ "python3" ]
-CMD [ "v6/api.py" ]
+# install dependencies
+RUN pip install -r require.txt
+# expose port 8080
+EXPOSE 8080
+# run the app
+CMD [ "python", "v6/api.py" ]
