@@ -17,8 +17,10 @@ yes | sudo apt-get install docker-ce
 ```
 Then run:
 ```bash
-git clone git@github.com:vikramdurai/brightcoin
-cd brightcoin
-sudo docker build -t brightcoin .
-sudo docker run -p 8080:8080 brightcoin
+sudo docker pull vikramdurai/brightcoin
+```
+
+Congrats! You've just installed Brightcoin! Now run it:
+```bash
+make run
 ```
