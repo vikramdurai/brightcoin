@@ -1,11 +1,9 @@
 # grab the latest version of Python
 FROM python:latest
 # create a temporary folder to hold installation
-COPY . /app
-WORKDIR /app
+COPY . /brightcoin
+WORKDIR /brightcoin
 # install dependencies
-RUN pip install -r require.txt
-# expose port 8080
-EXPOSE 8080
+RUN pip install -r requirements.txt
 # run the app
-CMD [ "python", "v6/api.py" ]
+CMD [ "python", "latest/api.py" ]
