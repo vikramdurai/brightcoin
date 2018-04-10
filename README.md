@@ -1,5 +1,8 @@
 # Brightcoin Core
-Brightcoin is a fee-less cryptocurrency for payments (it's an alternative to Bitcoin).
+Brightcoin is a fee-less cryptocurrency for payments (it is an alternative to Bitcoin).
+
+**Warning**: Don't invest into Brightcoin yet. It's very *insecure*. Try contributing instead, that will
+actually help Brightcoin!
 
 ## Installing
 If you haven't already, install `docker` (it's an amazing tool to deploy apps with):

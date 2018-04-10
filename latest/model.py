@@ -165,7 +165,7 @@ class Address:
         # empty the transaction list
         # into the freshly created block
         b.tx = bc.pending
-        # validate the transactions
+        # cement the transactions
         for i in b.tx:
             # make sure they're both valid addresses
             assert findAddress(i["sender"]), "sending address does not exist"
